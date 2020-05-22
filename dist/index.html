@@ -22,69 +22,7 @@
 	
 					<div class="content__overlay">
 
-						<div class="navigation">
-
-							<ul class="navigation__items">
-
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Oldschool</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">House</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">House</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Jazz</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Jazz</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Pop</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Pop</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">R&B</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">90's</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
-
-								</li>
-								
-								<li class="navigation__item">
-
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Podcasts</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Podcasts</a>
-
-								</li>
-
-							</ul>
-
-						</div>
+						<include src="./parts/navigation.html"></include>
 
 					</div>
 
@@ -166,11 +104,21 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   event.target.playVideo();
-  event.target.setVolume(50);
-} // 5. The API calls this function when the player's state changes.
+  event.target.setVolume(50); // Current time
+
+  var current = document.querySelector('.js-current');
+  var currentTime = player.getCurrentTime();
+  current.innerHTML = "\n\t\t\t\t<span>".concat(currentTime, "</span>\n\t\t\t");
+} // Get duration
+
+
+var duration = document.querySelector('.js-duration');
+setInterval(function () {
+  var durationSeconds = player.getDuration();
+  console.log(durationSeconds);
+}, 1000); // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
-
 
 var done = false;
 
@@ -211,19 +159,6 @@ navigationButton.addEventListener('click', function (e) {
   e.preventDefault();
   document.body.classList.toggle('is-visible');
 });
-
-function onPlayerReady() {
-  // Current time
-  var current = document.querySelector('.js-current');
-  var currentTime = player.getCurrentTime();
-  current.innerHTML = "\n\t\t\t\t<span>".concat(currentTime, "</span>\n\t\t\t"); // Get duration
-
-  var duration = document.querySelector('.js-duration');
-  var durationSeconds = player.getDuration();
-  var durationMinutes = Math.floor(durationSeconds / 60);
-  duration.innerHTML = "\n\t\t\t\t<span>".concat(durationMinutes, "</span>\n\t\t\t");
-}
-
 var navigationList = document.querySelector('.navigation__items');
 var navigationLinks = navigationList.querySelectorAll('.navigation__link');
 
