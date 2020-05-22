@@ -7,102 +7,206 @@
 		<header class="header"></header>
 
 		<main class="main">
-
+			
 			<sidebar class="sidebar"></sidebar>
 
 			<div class="content">
+				
+				<div class="content__player">
 
-			<div id="player" class="player"></div>
+					<a href="#" class="content__navigation js-navigation"></a>
+	
+					<div class="content__overlay">
+
+						<div class="navigation">
+
+							<ul class="navigation__items">
+
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Oldschool</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">House</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">House</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Jazz</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Jazz</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Pop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Pop</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
+
+								</li>
+								
+								<li class="navigation__item">
+
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Podcasts</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Podcasts</a>
+
+								</li>
+
+							</ul>
+
+						</div>
+
+					</div>
+
+					<div id="player" class="player"></div>
+
+				</div>
+
+				<div class="content__controls">
+
+					<bottom class="bottom">
 			
+						<div class="bottom__main-controls">
+			
+							<div class="bottom__controls">
+			
+								<a href="#" class="bottom__control-item bottom__control-item--shuffle js-shuffle"></a>
+
+								<a href="#" class="bottom__control-item bottom__control-item--previous js-previous"></a>
+								
+								<a href="#" class="bottom__control-item bottom__control-item--play js-play"></a>
+								
+								<a href="#" class="bottom__control-item bottom__control-item--next js-next"></a>
+								
+								<a href="#" class="bottom__control-item bottom__control-item--repeat js-repeat"></a>
+			
+							</div>
+			
+							<div class="bottom__progress"></div>
+			
+						</div>
+			
+						<div class="bottom__volume"></div>
+			
+					</bottom>
+
+				</div>
+
 			</div>
 
 		</main>
 
-		<footer class="footer">
-
-			<div class="footer__main-controls">
-
-				<div class="footer__controls">
-
-					<a href="#" class="footer__control-item footer__control-item--previous js-previous"></a>
-					
-					<a href="#" class="footer__control-item footer__control-item--play js-play"></a>
-					
-					<a href="#" class="footer__control-item footer__control-item--next js-next"></a>
-
-				</div>
-
-				<div class="footer__progress"></div>
-
-			</div>
-
-			<div class="footer__volume"></div>
-
-		</footer>
-
     </div>
 
     <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+		// 2. This code loads the IFrame Player API code asynchronously.
+		var tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '427',
-          width: '700',
-		  videoId: 'ktuYktRmjWQ',
-		  playerVars: { 'autoplay': 1, 'controls': 0 },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
+		var playlistId = 'PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT';
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-	  }
-
-	var stopButton = document.querySelector('.js-play');
-	var nextButton = document.querySelector('.js-next');
-	var previousButton = document.querySelector('.js-previous');
-
-	stopButton.addEventListener('click', function(e) {
-		stopButton.classList.toggle('is-paused');
-		
-		if(stopButton.classList.contains('is-paused')) {
-			player.playVideo();
-		} else {
-			player.pauseVideo();
+		// 3. This function creates an <iframe> (and YouTube player)
+		//    after the API code downloads.
+		var player;
+		function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			height: '427',
+			width: '700',
+			playerVars: { 'controls': 0, 'autoplay': 1, 'listType': 'playlist', 'list': playlistId },
+			events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+			}
+		});
 		}
-	})
 
-	nextButton.addEventListener('click', function() {
+		// 4. The API will call this function when the video player is ready.
+		function onPlayerReady(event) {
+		event.target.playVideo();
+		event.target.setVolume(50);
+		}
+
+		// 5. The API calls this function when the player's state changes.
+		//    The function indicates that when playing a video (state=1),
+		//    the player should play for six seconds and then stop.
+		var done = false;
+		function onPlayerStateChange(event) {}
+
+		var stopButton = document.querySelector('.js-play');
+		var nextButton = document.querySelector('.js-next');
+		var previousButton = document.querySelector('.js-previous');
+		var navigationButton = document.querySelector('.js-navigation');
+
+		stopButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			stopButton.classList.toggle('is-paused');
+			
+			if(stopButton.classList.contains('is-paused')) {
+				player.playVideo();
+			} else {
+				player.pauseVideo();
+			}
+		})
+
+		// Next Video
+		nextButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			player.nextVideo();
+		})
 		
-	})
-	
-	previousButton.addEventListener('click', function() {
-		
-	})
+		// Previous Video
+		previousButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			player.previousVideo();
+		})
+
+		// Navigation Button
+		navigationButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			document.body.classList.toggle('is-visible');
+		})
+
+		const navigationList = document.querySelector('.navigation__items');
+		const navigationLinks = navigationList.querySelectorAll('.navigation__link');
+
+		for (let index = 0; index < navigationLinks.length; index++) {
+			const link = navigationLinks[index];
+
+			link.addEventListener('click', function(e) {
+				const playlistLink = link.getAttribute('href');
+				playlistId = playlistLink;
+			})
+			
+		}
 	  
     </script>
 

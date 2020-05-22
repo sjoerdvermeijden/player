@@ -1,7 +1,8 @@
-.footer {
+.bottom {
     background: color(grey, dark);
     display: flex;
     justify-content: flex-end;
+    width: 100%;
 
     &__element {
 
@@ -9,7 +10,7 @@
 
     &__progress {
         width: 100%;
-        height: 8px;
+        height: 6px;
         border-radius: 5px;
         background: red;
     }
@@ -35,14 +36,19 @@
     &__control-item {
         width: 45px;
         height: 45px;
-        background: white;
+        border: 1px solid white;
+        border-radius: 50%;
 
         &:not(:last-child) {
-            margin-right: 20px;
+            margin-right: 15px;
+        }
+
+        &--repeat {
+            border-color: yellow;
         }
 
         &--previous {
-            
+            border-color: blue;
         }
         
         &--play {
@@ -50,7 +56,11 @@
         }
         
         &--next {
-            
+            border-color: red;
+        }
+
+        &--shuffle {
+            border-color: green;
         }
 
     }

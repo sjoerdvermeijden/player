@@ -1,0 +1,46 @@
+.navigation {
+    max-width: 940px;
+    margin: 0 auto;
+
+    $gutter: 20px;
+
+    &__items {
+        margin: -$gutter;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter;
+        width: p(1, 3);
+    }
+
+    &__link {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+        
+        
+        &--main {
+            font-size: 18px;
+            font-weight: bold;
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+
+            &:after {
+                content: '//';
+                padding-left: 5px;
+                font-weight: bold;
+            }
+            
+        }
+
+    }
+
+}
