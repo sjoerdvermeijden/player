@@ -1,0 +1,25 @@
+.container,
+.users {
+    padding: 25px;
+    background: color(grey, lighter);
+    border-radius: 5px;
+    max-width: 550px;
+    min-width: 850px;
+}
+
+.container {
+
+    &:not(:last-child) {
+        margin-bottom: 25px;    
+    }
+
+}
+
+.users {
+
+    &:empty {
+        @debug &;
+        display: none;
+    }
+
+}

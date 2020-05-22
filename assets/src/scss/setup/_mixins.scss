@@ -1,0 +1,9 @@
+// Width function
+@function p($target, $container) {
+    @return ($target / $container) * 100%;
+}
+
+// Sass maps function
+@function color($color, $value: 'default') {
+    @return map-get(map-get($colors, $color), $value);
+}

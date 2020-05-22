@@ -1,0 +1,29 @@
+.button {
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+
+    &.edit {
+        background: red;
+    }
+    
+    &.delete {
+        background: blue;
+    }
+
+}
+
+.button-list {
+
+    .button {
+
+        &:not(:last-child) {
+            margin-right: 8px;    
+        }
+
+    }
+
+}

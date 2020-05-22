@@ -1,0 +1,35 @@
+$primary: color(red);
+$secondary: #AD5C51;
+
+$colors: (
+	grey: (
+		darker: #2c2d33,
+		dark: #43454b,
+		default: #282c34,
+		light: #afada8,
+		lighter: #f4f4f4
+	),
+	yellow: (
+		default: #fff351,
+		light: #fff89e
+	),
+	green: (
+		default: #4caf50
+	),
+	red: (
+		default: #F44336
+	)
+);
+
+// Fonts
+$font: 'https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap';
+$font-family: 'Sen', sans-serif;
+
+// Font sizes
+$font-size: 14px;
+$line-height: 24px;
+
+// Media queries
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
