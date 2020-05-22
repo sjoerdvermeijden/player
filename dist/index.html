@@ -14,7 +14,11 @@
 				
 				<div class="content__player">
 
-					<a href="#" class="content__navigation js-navigation"></a>
+					<a href="#" class="content__navigation js-navigation">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
 	
 					<div class="content__overlay">
 
@@ -59,8 +63,8 @@
 								
 								<li class="navigation__item">
 
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
-									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">R&B</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">90's</a>
 
 								</li>
 								
@@ -112,7 +116,11 @@
 			
 						</div>
 			
-						<div class="bottom__volume"></div>
+						<div class="bottom__volume">
+
+							<div class="volume"></div>
+
+						</div>
 			
 					</bottom>
 
@@ -128,11 +136,10 @@
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var playlistId = 'PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT'; // 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); // Player
 
 var player;
+var playlistId = 'PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT';
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
@@ -168,6 +175,7 @@ var stopButton = document.querySelector('.js-play');
 var nextButton = document.querySelector('.js-next');
 var previousButton = document.querySelector('.js-previous');
 var navigationButton = document.querySelector('.js-navigation');
+var repeatButton = document.querySelector('.js-repeat');
 stopButton.addEventListener('click', function (e) {
   e.preventDefault();
   stopButton.classList.toggle('is-paused');
@@ -187,6 +195,11 @@ nextButton.addEventListener('click', function (e) {
 previousButton.addEventListener('click', function (e) {
   e.preventDefault();
   player.previousVideo();
+}); // Previous Video
+
+repeatButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  player.setLoop();
 }); // Navigation Button
 
 navigationButton.addEventListener('click', function (e) {
@@ -199,6 +212,7 @@ var navigationLinks = navigationList.querySelectorAll('.navigation__link');
 var _loop = function _loop(index) {
   var link = navigationLinks[index];
   link.addEventListener('click', function (e) {
+    e.preventDefault();
     var playlistLink = link.getAttribute('href');
     playlistId = playlistLink;
   });

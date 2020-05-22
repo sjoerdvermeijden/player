@@ -66,9 +66,19 @@
     }
 
     &__volume {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 200px;
         padding: 30px 25px;
         background: blue;
     }
 
+}
+
+.volume {
+    width: 100px;
+    height: 3px;
+    border-radius: 5px;
+    background: grey;
 }

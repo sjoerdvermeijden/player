@@ -73,9 +73,19 @@ html {
   border-color: green;
 }
 .bottom__volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   padding: 30px 25px;
   background: blue;
+}
+
+.volume {
+  width: 100px;
+  height: 3px;
+  border-radius: 5px;
+  background: grey;
 }
 
 .container,
@@ -124,7 +134,7 @@ html {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  width: 33.3333333333%;
+  width: 25%;
 }
 .navigation__link {
   text-decoration: none;
@@ -155,6 +165,10 @@ html {
   background: #2c2d33;
 }
 .content__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 35px;
   left: 35px;
@@ -163,6 +177,16 @@ html {
   background: red;
   border-radius: 50%;
   z-index: 1;
+}
+.content__navigation span {
+  width: 25px;
+  height: 3px;
+  border-radius: 5px;
+  background: white;
+  display: inline-block;
+}
+.content__navigation span:not(:last-child) {
+  margin-bottom: 5px;
 }
 .content__overlay {
   display: none;
