@@ -27,15 +27,41 @@ html {
 
 .footer {
   background: #43454b;
-  padding: 20px 0;
   display: flex;
   justify-content: flex-end;
 }
 .footer__progress {
-  width: 250px;
+  width: 100%;
   height: 8px;
   border-radius: 5px;
   background: red;
+}
+.footer__main-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  flex-grow: 1;
+}
+.footer__controls {
+  display: flex;
+}
+.footer__controls:not(:last-child) {
+  margin-bottom: 15px;
+}
+.footer__control-item {
+  width: 45px;
+  height: 45px;
+  background: white;
+}
+.footer__control-item:not(:last-child) {
+  margin-right: 20px;
+}
+.footer__volume {
+  width: 200px;
+  padding: 30px 25px;
+  background: blue;
 }
 
 .container,

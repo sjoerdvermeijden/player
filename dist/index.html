@@ -22,6 +22,16 @@
 
 			<div class="footer__main-controls">
 
+				<div class="footer__controls">
+
+					<a href="#" class="footer__control-item footer__control-item--previous js-previous"></a>
+					
+					<a href="#" class="footer__control-item footer__control-item--play js-play"></a>
+					
+					<a href="#" class="footer__control-item footer__control-item--next js-next"></a>
+
+				</div>
+
 				<div class="footer__progress"></div>
 
 			</div>
@@ -43,9 +53,13 @@ var player;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE',
+    height: '427',
+    width: '700',
+    videoId: 'ktuYktRmjWQ',
+    playerVars: {
+      'autoplay': 1,
+      'controls': 0
+    },
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -68,7 +82,22 @@ function onPlayerStateChange(event) {
     setTimeout(stopVideo, 6000);
     done = true;
   }
-}</script>
+}
+
+var stopButton = document.querySelector('.js-play');
+var nextButton = document.querySelector('.js-next');
+var previousButton = document.querySelector('.js-previous');
+stopButton.addEventListener('click', function (e) {
+  stopButton.classList.toggle('is-paused');
+
+  if (stopButton.classList.contains('is-paused')) {
+    player.playVideo();
+  } else {
+    player.pauseVideo();
+  }
+});
+nextButton.addEventListener('click', function () {});
+previousButton.addEventListener('click', function () {});</script>
 
     <script src="/main.1f19ae8e.js"></script>
     
