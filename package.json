@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "sass": "^1.26.5"
+  },
+  "dependencies": {
+    "parcel-plugin-svg-sprite": "^1.4.1"
   }
 }

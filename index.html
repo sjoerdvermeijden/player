@@ -96,6 +96,8 @@
 
 					<bottom class="bottom">
 			
+						<div class="bottom__current js-current"></div>
+
 						<div class="bottom__main-controls">
 			
 							<div class="bottom__controls">
@@ -112,10 +114,13 @@
 			
 							</div>
 			
+							
 							<div class="bottom__progress"></div>
-			
+							
 						</div>
-			
+
+						<div class="bottom__duration js-duration"></div>
+						
 						<div class="bottom__volume">
 
 							<div class="volume"></div>
@@ -208,6 +213,28 @@
 			e.preventDefault();
 			document.body.classList.toggle('is-visible');
 		})
+
+		function onPlayerReady() {
+
+			// Current time
+			const current = document.querySelector('.js-current');
+			const currentTime = player.getCurrentTime();
+
+			current.innerHTML = `
+				<span>${currentTime}</span>
+			`;
+
+			// Get duration
+			const duration = document.querySelector('.js-duration');
+			const durationSeconds = player.getDuration();
+	
+			const durationMinutes = Math.floor(durationSeconds / 60);
+	
+	
+			duration.innerHTML = `
+				<span>${durationMinutes}</span>
+			`;
+		}
 
 		const navigationList = document.querySelector('.navigation__items');
 		const navigationLinks = navigationList.querySelectorAll('.navigation__link');

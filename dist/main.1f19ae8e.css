@@ -45,6 +45,18 @@ html {
   padding: 25px 25px;
   flex-grow: 1;
 }
+.bottom__current, .bottom__duration {
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom__current {
+  background: salmon;
+}
+.bottom__duration {
+  background: gold;
+}
 .bottom__controls {
   display: flex;
 }

@@ -96,6 +96,8 @@
 
 					<bottom class="bottom">
 			
+						<div class="bottom__current js-current"></div>
+
 						<div class="bottom__main-controls">
 			
 							<div class="bottom__controls">
@@ -112,10 +114,13 @@
 			
 							</div>
 			
+							
 							<div class="bottom__progress"></div>
-			
+							
 						</div>
-			
+
+						<div class="bottom__duration js-duration"></div>
+						
 						<div class="bottom__volume">
 
 							<div class="volume"></div>
@@ -206,6 +211,19 @@ navigationButton.addEventListener('click', function (e) {
   e.preventDefault();
   document.body.classList.toggle('is-visible');
 });
+
+function onPlayerReady() {
+  // Current time
+  var current = document.querySelector('.js-current');
+  var currentTime = player.getCurrentTime();
+  current.innerHTML = "\n\t\t\t\t<span>".concat(currentTime, "</span>\n\t\t\t"); // Get duration
+
+  var duration = document.querySelector('.js-duration');
+  var durationSeconds = player.getDuration();
+  var durationMinutes = Math.floor(durationSeconds / 60);
+  duration.innerHTML = "\n\t\t\t\t<span>".concat(durationMinutes, "</span>\n\t\t\t");
+}
+
 var navigationList = document.querySelector('.navigation__items');
 var navigationLinks = navigationList.querySelectorAll('.navigation__link');
 

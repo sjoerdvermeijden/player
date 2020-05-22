@@ -24,6 +24,22 @@
         flex-grow: 1;
     }
 
+    &__current,
+    &__duration {
+        padding: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &__current {
+        background: salmon;
+    }
+    
+    &__duration {
+        background: gold;
+    }
+
     &__controls {
         display: flex;
         
