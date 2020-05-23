@@ -44,39 +44,31 @@
         display: flex;
         
         &:not(:last-child) {
-            margin-bottom: 15px;    
+            margin-bottom: 15px;
         }
 
     }
 
     &__control-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 45px;
         height: 45px;
-        border: 1px solid white;
+        color: white;
         border-radius: 50%;
 
         &:not(:last-child) {
             margin-right: 15px;
         }
 
-        &--repeat {
-            border-color: yellow;
+        svg {
+            width: 15px;
+            height: 15px;
         }
 
-        &--previous {
-            border-color: blue;
-        }
-        
         &--play {
-            
-        }
-        
-        &--next {
-            border-color: red;
-        }
-
-        &--shuffle {
-            border-color: green;
+            border: 1px solid white;
         }
 
     }
