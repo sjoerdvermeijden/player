@@ -24,6 +24,7 @@ html {
 .header {
   background: #42454B;
   padding: 25px 20px;
+  display: flex;
 }
 
 .logo {
@@ -41,10 +42,10 @@ html {
   width: 100%;
 }
 .bottom__progress {
+  width: 850px;
+}
+.bottom__progress input {
   width: 100%;
-  height: 6px;
-  border-radius: 5px;
-  background: red;
 }
 .bottom__main-controls {
   display: flex;
@@ -97,7 +98,6 @@ html {
   justify-content: center;
   width: 200px;
   padding: 30px 25px;
-  background: blue;
 }
 
 .volume {
