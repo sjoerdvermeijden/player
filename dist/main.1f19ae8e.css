@@ -8,6 +8,7 @@
 
 html {
   font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
 }
 
 .site {
@@ -22,7 +23,15 @@ html {
 
 .header {
   background: #42454B;
-  padding: 25px 0;
+  padding: 25px 20px;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.video-title {
+  color: white;
 }
 
 .bottom {
@@ -64,25 +73,23 @@ html {
   margin-bottom: 15px;
 }
 .bottom__control-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 45px;
   height: 45px;
-  border: 1px solid white;
+  color: white;
   border-radius: 50%;
 }
 .bottom__control-item:not(:last-child) {
   margin-right: 15px;
 }
-.bottom__control-item--repeat {
-  border-color: yellow;
+.bottom__control-item svg {
+  width: 15px;
+  height: 15px;
 }
-.bottom__control-item--previous {
-  border-color: blue;
-}
-.bottom__control-item--next {
-  border-color: red;
-}
-.bottom__control-item--shuffle {
-  border-color: green;
+.bottom__control-item--play {
+  border: 1px solid white;
 }
 .bottom__volume {
   display: flex;
@@ -100,21 +107,12 @@ html {
   background: grey;
 }
 
-.container,
-.users {
-  padding: 25px;
-  background: #f4f4f4;
-  border-radius: 5px;
-  max-width: 550px;
-  min-width: 850px;
+.container {
+  display: flex;
+  flex-direction: column;
 }
-
-.container:not(:last-child) {
+.container .player:not(:last-child) {
   margin-bottom: 25px;
-}
-
-.users:empty {
-  display: none;
 }
 
 .block__padding {
@@ -192,7 +190,7 @@ html {
 }
 .content__navigation span {
   width: 25px;
-  height: 3px;
+  height: 2px;
   border-radius: 5px;
   background: white;
   display: inline-block;
@@ -202,13 +200,13 @@ html {
   margin-bottom: 5px;
 }
 .is-visible .content__navigation span:nth-child(1) {
-  transform: rotate(-45deg) translateY(10px);
+  transform: rotate(-45deg) translate(-5px, 5px);
 }
 .is-visible .content__navigation span:nth-child(2) {
   opacity: 0;
 }
 .is-visible .content__navigation span:nth-child(3) {
-  transform: rotate(45deg) translateY(-10px);
+  transform: rotate(45deg) translate(-5px, -5px);
 }
 .content__overlay {
   display: none;
@@ -241,7 +239,7 @@ html {
 }
 
 .player {
-  margin-top: -50px;
+  margin-top: -70px;
   margin-left: -200px;
 }
 
