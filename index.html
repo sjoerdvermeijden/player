@@ -22,7 +22,71 @@
 	
 					<div class="content__overlay">
 
-						<include src="./parts/navigation.html"></include>
+						<div class="navigation">
+
+							<ul class="navigation__items">
+						
+								<li class="navigation__item">
+						
+									<a href="PLvuMfxvpAQrkzez9insKS8cGPU74sK1Ss" data-link="PLvuMfxvpAQrkzez9insKS8cGPU74sK1Ss" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Trap</a>
+									<a href="PLvuMfxvpAQrkzez9insKS8cGPU74sK1Ss" data-link="PLvuMfxvpAQrkzez9insKS8cGPU74sK1Ss" class="navigation__link navigation__link--sub">Oldschool</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="PLjzeyhEA84sS6ogo2mXWdcTrL2HRfJUv8" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">House</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">House</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Jazz</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Jazz</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Pop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Pop</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">R&B</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">90's</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Hip hop</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Hip hop</a>
+						
+								</li>
+								
+								<li class="navigation__item">
+						
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--main">Podcasts</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Joe Rogan</a>
+									<a href="#" data-link="PLwE3TEHTVMsJjsMzY0Kxgfoj8ejeMfalT" class="navigation__link navigation__link--sub">Vlad TV</a>
+						
+								</li>
+						
+							</ul>
+						
+						</div>
 
 					</div>
 
@@ -103,6 +167,7 @@
 		function onPlayerReady(event) {
 			event.target.playVideo();
 			event.target.setVolume(50);
+			event.target.setLoop(true);
 
 			// Current time
 			const current = document.querySelector('.js-current');
@@ -179,8 +244,18 @@
 			link.addEventListener('click', function(e) {
 				e.preventDefault();
 
+				document.body.classList.remove('is-visible');
+
 				const playlistLink = link.getAttribute('href');
 				playlistId = playlistLink;
+
+				console.log(playlistId);
+
+				player.loadPlaylist({
+					list: playlistId,
+                    listType: 'playlist'
+				})
+
 			})
 			
 		}
