@@ -36,6 +36,7 @@ html {
 }
 
 .bottom {
+  position: relative;
   background: #43454b;
   display: flex;
   justify-content: flex-end;
@@ -46,6 +47,9 @@ html {
 }
 .bottom__progress input {
   width: 100%;
+}
+.bottom__progress input:hover, .bottom__progress input:focus {
+  cursor: pointer;
 }
 .bottom__main-controls {
   display: flex;
@@ -92,7 +96,22 @@ html {
 .bottom__control-item--play {
   border: 1px solid white;
 }
+.is-playing .bottom__control-item--play {
+  display: none;
+}
+.bottom__control-item--pause {
+  border: 1px solid white;
+  display: none;
+}
+.is-playing .bottom__control-item--pause {
+  display: flex;
+}
 .bottom__volume {
+  border-left: 1px solid #2c2d33;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,6 +243,7 @@ html {
 .content__player {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: auto;
@@ -240,7 +260,9 @@ html {
 
 .player {
   margin-top: -70px;
-  margin-left: -200px;
+}
+.player:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .search {

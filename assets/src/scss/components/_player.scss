@@ -1,4 +1,8 @@
 .player {
     margin-top: -70px;
-    margin-left: -200px;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;    
+    }
+
 }
