@@ -37,8 +37,9 @@
         }
         
         .is-muted & {
+            display: block;
 
-            #{$root}__icon--unmuted {
+            &--unmuted {
                 display: none;
             }
 

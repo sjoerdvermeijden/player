@@ -114,7 +114,7 @@ html {
   display: flex;
 }
 .is-shuffled .bottom__control-item--shuffle {
-  color: red;
+  color: white;
 }
 .bottom__volume {
   border-left: 1px solid #2c2d33;
@@ -207,7 +207,10 @@ html {
   height: 15px;
   color: #afada8;
 }
-.is-muted .volume__icon .volume__icon--unmuted {
+.is-muted .volume__icon {
+  display: block;
+}
+.is-muted .volume__icon--unmuted {
   display: none;
 }
 .volume__icon--unmuted {
