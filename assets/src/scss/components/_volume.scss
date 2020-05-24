@@ -28,6 +28,7 @@
     }
 
     &__icon {
+        display: none;
 
         svg {
             width: 15px;
@@ -41,6 +42,10 @@
                 display: none;
             }
 
+        }
+
+        &--unmuted {
+            display: block;
         }
 
     }

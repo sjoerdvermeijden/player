@@ -199,6 +199,9 @@ html {
   border-radius: 5px;
   background: grey;
 }
+.volume__icon {
+  display: none;
+}
 .volume__icon svg {
   width: 15px;
   height: 15px;
@@ -206,6 +209,9 @@ html {
 }
 .is-muted .volume__icon .volume__icon--unmuted {
   display: none;
+}
+.volume__icon--unmuted {
+  display: block;
 }
 
 .content {
