@@ -1,0 +1,42 @@
+.volume {
+    $root: &;
+
+    display: flex;
+    align-items: center;
+
+    &__button {
+        width: 15px;
+        height: 15px;
+        color: white;
+
+        &:not(:last-child) {
+            margin-right: 15px;    
+        }
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+        }
+
+    }
+
+    &__range {    
+        width: 100px;
+        height: 3px;
+        border-radius: 5px;
+        background: grey;
+    }
+
+    &__icon {
+        
+        .is-muted & {
+
+            #{$root}__icon--unmuted {
+                display: none;
+            }
+
+        }
+
+    }
+
+}

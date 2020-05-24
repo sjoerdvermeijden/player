@@ -84,27 +84,33 @@ html {
   width: 45px;
   height: 45px;
   color: white;
-  border-radius: 50%;
+  transition: color 0.3s ease;
 }
 .bottom__control-item:not(:last-child) {
   margin-right: 15px;
+}
+.bottom__control-item:hover, .bottom__control-item:focus {
+  color: red;
 }
 .bottom__control-item svg {
   width: 15px;
   height: 15px;
 }
-.bottom__control-item--play {
+.bottom__control-item--play, .bottom__control-item--pause {
+  border-radius: 50%;
   border: 1px solid white;
 }
 .is-playing .bottom__control-item--play {
   display: none;
 }
 .bottom__control-item--pause {
-  border: 1px solid white;
   display: none;
 }
 .is-playing .bottom__control-item--pause {
   display: flex;
+}
+.is-shuffled .bottom__control-item--shuffle {
+  color: red;
 }
 .bottom__volume {
   border-left: 1px solid #2c2d33;
@@ -119,28 +125,12 @@ html {
   padding: 30px 25px;
 }
 
-.volume {
-  width: 100px;
-  height: 3px;
-  border-radius: 5px;
-  background: grey;
-}
-
 .container {
   display: flex;
   flex-direction: column;
 }
 .container .player:not(:last-child) {
   margin-bottom: 25px;
-}
-
-.block__padding {
-  padding: 70px 0;
-}
-.block__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .sidebar {
@@ -182,6 +172,31 @@ html {
   content: "//";
   padding-left: 5px;
   font-weight: bold;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+}
+.volume__button {
+  width: 15px;
+  height: 15px;
+  color: white;
+}
+.volume__button:not(:last-child) {
+  margin-right: 15px;
+}
+.volume__button:hover, .volume__button:focus {
+  cursor: pointer;
+}
+.volume__range {
+  width: 100px;
+  height: 3px;
+  border-radius: 5px;
+  background: grey;
+}
+.is-muted .volume__icon .volume__icon--unmuted {
+  display: none;
 }
 
 .content {
@@ -265,14 +280,6 @@ html {
   margin-bottom: 20px;
 }
 
-.search {
-  width: 100%;
-  border-radius: 3px;
-  padding: 8px;
-  border-width: 0;
-  box-shadow: inset 3px 3px 3px 0px #807d80;
-}
-
 .button {
   padding: 10px;
   border-radius: 5px;
@@ -290,64 +297,6 @@ html {
 
 .button-list .button:not(:last-child) {
   margin-right: 8px;
-}
-
-.user-item {
-  list-style: none;
-  display: flex;
-}
-.user-item:not(:last-child) {
-  margin-bottom: 12px;
-}
-.user-item__list {
-  list-style-type: none;
-  display: flex;
-  flex-grow: 1;
-}
-.user-item__list:not(:last-child) {
-  margin-right: 10px;
-}
-.user-item__item {
-  width: 33%;
-  background: white;
-  border-radius: 3px;
-  padding: 10px;
-  font-size: 12px;
-}
-.user-item__item:not(:last-child) {
-  margin-right: 10px;
-}
-.user-item__name, .user-item__email, .user-item__adres {
-  background: white;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 12px;
-}
-
-.form {
-  display: flex;
-}
-.form input {
-  flex-grow: 1;
-  border-radius: 3px;
-  padding: 8px;
-  border-width: 0;
-  box-shadow: inset 3px 3px 3px 0px #807d80;
-}
-.form input:not(:last-child) {
-  margin-right: 10px;
-}
-.form input[type=submit] {
-  background: red;
-  color: white;
-  font-size: 14px;
-  box-shadow: none;
-  box-shadow: 3px 3px 3px 0px #807d80;
-}
-
-.wrap {
-  margin: 0 auto;
-  max-width: 1140px;
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */

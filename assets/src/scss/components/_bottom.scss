@@ -65,19 +65,29 @@
         width: 45px;
         height: 45px;
         color: white;
-        border-radius: 50%;
+        transition: color .3s ease;
 
         &:not(:last-child) {
             margin-right: 15px;
         }
 
+        &:hover,
+        &:focus {
+            color: red;
+        }
+
         svg {
             width: 15px;
-            height: 15px;
+            height: 15px;    
+        }
+
+        &--play,
+        &--pause {
+            border-radius: 50%;
+            border: 1px solid white;
         }
 
         &--play {
-            border: 1px solid white;
             
             .is-playing & {
                 display: none;
@@ -86,11 +96,18 @@
         }
         
         &--pause {
-            border: 1px solid white;
             display: none;
 
             .is-playing & {
                 display: flex;
+            }
+
+        }
+
+        &--shuffle {
+            
+            .is-shuffled & {
+                color: red;
             }
 
         }
@@ -110,11 +127,4 @@
         padding: 30px 25px;
     }
 
-}
-
-.volume {
-    width: 100px;
-    height: 3px;
-    border-radius: 5px;
-    background: grey;
 }
