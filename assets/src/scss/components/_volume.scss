@@ -28,6 +28,12 @@
     }
 
     &__icon {
+
+        svg {
+            width: 15px;
+            height: 15px;
+            color: color(grey, light);
+        }
         
         .is-muted & {
 

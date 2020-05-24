@@ -83,14 +83,14 @@ html {
   justify-content: center;
   width: 45px;
   height: 45px;
-  color: white;
+  color: #afada8;
   transition: color 0.3s ease;
 }
 .bottom__control-item:not(:last-child) {
   margin-right: 15px;
 }
-.bottom__control-item:hover, .bottom__control-item:focus {
-  color: red;
+.bottom__control-item:hover {
+  color: white;
 }
 .bottom__control-item svg {
   width: 15px;
@@ -98,7 +98,11 @@ html {
 }
 .bottom__control-item--play, .bottom__control-item--pause {
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid #afada8;
+  transition: border-color 0.3s ease;
+}
+.bottom__control-item--play:hover, .bottom__control-item--pause:hover {
+  border-color: white;
 }
 .is-playing .bottom__control-item--play {
   display: none;
@@ -195,6 +199,11 @@ html {
   border-radius: 5px;
   background: grey;
 }
+.volume__icon svg {
+  width: 15px;
+  height: 15px;
+  color: #afada8;
+}
 .is-muted .volume__icon .volume__icon--unmuted {
   display: none;
 }
@@ -226,7 +235,7 @@ html {
   width: 25px;
   height: 2px;
   border-radius: 5px;
-  background: white;
+  background: #afada8;
   display: inline-block;
   transition: transform 0.3s ease;
 }
