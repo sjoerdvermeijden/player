@@ -219,6 +219,15 @@ html {
 .is-muted .volume__icon--unmuted {
   display: none;
 }
+.is-muted .volume__icon--dimmed {
+  display: none;
+}
+.is-dimmed .volume__icon--unmuted {
+  display: none;
+}
+.is-dimmed .volume__icon--dimmed {
+  display: block;
+}
 .volume__icon--unmuted {
   display: block;
 }

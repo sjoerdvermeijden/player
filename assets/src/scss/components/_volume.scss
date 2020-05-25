@@ -48,6 +48,22 @@
                 display: none;
             }
 
+            &--dimmed {
+                display: none;
+            }
+            
+        }
+        
+        .is-dimmed & {
+
+            &--unmuted {
+                display: none;
+            }
+
+            &--dimmed {
+                display: block;    
+            }
+
         }
 
         &--unmuted {

@@ -168,6 +168,12 @@
 
 									</div>
 									
+									<div class="volume__icon volume__icon--dimmed js-dimmed">
+
+										<svg xmlns="http://www.w3.org/2000/svg" width="612.938" height="571.908" viewBox="313.257 -9.731 612.938 571.908"><path d="M669.193-7.707c-7.105-3.389-15.477-2.491-21.601 2.45L448.984 153.622H354.09c-22.499 0-40.833 18.333-40.833 40.832v163.329c0 22.541 18.334 40.833 40.833 40.833h94.895l198.567 158.879a20.62 20.62 0 0 0 12.78 4.45c3.021 0 6.043-.693 8.861-2.042a20.376 20.376 0 0 0 11.555-18.373V10.708c0-7.839-4.492-14.985-11.555-18.415zm114.902 139.442c-8.044-7.921-20.947-7.799-28.868.164-7.922 8.044-7.84 20.947.163 28.91 30.869 30.46 47.855 71.415 47.855 115.31 0 43.895-16.986 84.85-47.855 115.311-8.003 7.882-8.085 20.824-.163 28.868a20.34 20.34 0 0 0 14.494 6.044 20.347 20.347 0 0 0 14.374-5.922c38.708-38.096 59.982-89.381 59.982-144.301 0-54.92-21.274-106.205-59.982-144.384z" fill="currentColor"/></svg>
+
+									</div>
+									
 									<div class="volume__icon volume__icon--unmuted">
 
 										<svg xmlns="http://www.w3.org/2000/svg" width="612" height="571.224" viewBox="0 110.388 612 571.224"><path d="M355.653 112.411c-7.099-3.386-15.463-2.489-21.583 2.448L135.619 273.611H40.8c-22.48 0-40.8 18.319-40.8 40.8v163.2c0 22.521 18.319 40.8 40.8 40.8h94.819l198.41 158.753a20.601 20.601 0 0 0 12.771 4.447c3.02 0 6.038-.693 8.854-2.04a20.358 20.358 0 0 0 11.547-18.359v-530.4c-.001-7.834-4.489-14.974-11.548-18.401zm114.812 139.332c-8.038-7.915-20.931-7.793-28.846.163-7.915 8.038-7.834 20.931.163 28.887 30.845 30.437 47.817 71.359 47.817 115.219 0 43.859-16.973 84.782-47.817 115.219-7.997 7.875-8.078 20.809-.163 28.846a20.328 20.328 0 0 0 14.484 6.038 20.326 20.326 0 0 0 14.361-5.916c38.679-38.066 59.936-89.311 59.936-144.187 0-54.877-21.256-106.121-59.935-144.269zm57.568-57.488c-8.037-7.956-20.93-7.875-28.886.123-7.915 7.997-7.834 20.93.122 28.846 46.39 45.981 71.931 107.345 71.931 172.788s-25.541 126.766-71.931 172.747c-7.956 7.956-8.037 20.89-.122 28.887 4.039 3.998 9.262 5.997 14.483 5.997a20.42 20.42 0 0 0 14.402-5.916C582.216 544.074 612 472.43 612 396.012c0-76.419-29.784-148.064-83.967-201.757z" fill="currentColor"/></svg>
@@ -379,21 +385,6 @@
 			progressBar.value = progressValue;
 		}
 
-		// Volume
-		const volume = document.querySelector('.js-volume');
-		
-		volume.addEventListener('mouseup', function (e) {
-			const volumeValue = e.target.value;
-
-			if (volumeValue === '0') {
-				document.body.classList.add('is-muted');
-			} else {
-				document.body.classList.remove('is-muted');
-			}
-
-			player.setVolume(volumeValue);
-		});
-
 		// Mute button
 		const body = document.body;
 		const muteButton = document.querySelector('.js-mute');
@@ -425,13 +416,18 @@
 			}
 
 			if (event.keyCode === 77) {
+				const dimmedVolume = document.querySelector('.js-dimmed');
 
 				if(player.isMuted()){
 					body.classList.remove('is-muted');
+					dimmedVolume.style.display = 'block';
+
 					player.unMute();
 				}
 				else{
 					body.classList.add('is-muted');
+					dimmedVolume.style.display = 'none';
+
 					player.mute();
 				}
 			}
@@ -439,6 +435,27 @@
 			if (event.keyCode == 91 && event.keyCode == 39) {}
 			
 		};
+
+		// Volume
+		const volume = document.querySelector('.js-volume');
+		
+		volume.addEventListener('mouseup', function (e) {
+			const volumeValue = e.target.value;
+
+			if (volumeValue > 0 && volumeValue < '50') {
+				document.body.classList.add('is-dimmed');
+				document.body.classList.remove('is-muted');
+			} else if (volumeValue === '0') {
+				console.log('test');
+				document.body.classList.add('is-muted');
+				document.body.classList.remove('is-dimmed');
+			} else if (volumeValue > '50') {
+				document.body.classList.remove('is-dimmed');
+				document.body.classList.remove('is-muted');
+			}
+
+			player.setVolume(volumeValue);
+		});
 	  
     </script>
 
