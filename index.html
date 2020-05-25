@@ -418,17 +418,17 @@
 			if (event.keyCode === 77) {
 				const dimmedVolume = document.querySelector('.js-dimmed');
 
-				if(player.isMuted()){
-					body.classList.remove('is-muted');
-					dimmedVolume.style.display = 'block';
-
-					player.unMute();
-				}
-				else{
+				if(!player.isMuted()){
 					body.classList.add('is-muted');
 					dimmedVolume.style.display = 'none';
-
+	
 					player.mute();
+				} else {
+					body.classList.remove('is-muted');
+					body.classList.remove('is-dimmed');
+					dimmedVolume.style.display = 'block';
+	
+					player.unMute();
 				}
 			}
 
@@ -446,12 +446,12 @@
 				document.body.classList.add('is-dimmed');
 				document.body.classList.remove('is-muted');
 			} else if (volumeValue === '0') {
-				console.log('test');
 				document.body.classList.add('is-muted');
 				document.body.classList.remove('is-dimmed');
 			} else if (volumeValue > '50') {
-				document.body.classList.remove('is-dimmed');
+				console.log('test');
 				document.body.classList.remove('is-muted');
+				document.body.classList.remove('is-dimmed');
 			}
 
 			player.setVolume(volumeValue);
