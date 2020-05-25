@@ -25,6 +25,11 @@
         height: 3px;
         border-radius: 5px;
         background: grey;
+
+        &:hover {
+            cursor: pointer;
+        }
+
     }
 
     &__icon {
