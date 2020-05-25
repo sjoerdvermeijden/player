@@ -252,10 +252,8 @@ function onPlayerStateChange(event) {
   } else {
     document.body.classList.add('is-playing');
   }
-} // Repeat Button
+} // Pause button
 
-
-var repeatButton = document.querySelector('.js-repeat'); // Pause button
 
 var pauseButton = document.querySelector('.js-pause');
 pauseButton.addEventListener('click', function (e) {
@@ -286,11 +284,18 @@ var previousButton = document.querySelector('.js-previous');
 previousButton.addEventListener('click', function (e) {
   e.preventDefault();
   player.previousVideo();
-}); // Previous Video
+}); // Repeat Button
 
+var repeatButton = document.querySelector('.js-repeat');
 repeatButton.addEventListener('click', function (e) {
   e.preventDefault();
-  player.setLoop();
+  var body = document.body;
+
+  if (!body.classList.contains('is-repeat')) {
+    body.classList.add('is-repeat');
+  } else {
+    body.classList.remove('is-repeat');
+  }
 }); // Navigation Button
 
 var navigationButton = document.querySelector('.js-navigation');
@@ -350,6 +355,13 @@ function updateProgressBar() {
 var volume = document.querySelector('.js-volume');
 volume.addEventListener('mouseup', function (e) {
   var volumeValue = e.target.value;
+
+  if (volumeValue === '0') {
+    document.body.classList.add('is-muted');
+  } else {
+    document.body.classList.remove('is-muted');
+  }
+
   player.setVolume(volumeValue);
 }); // Mute button
 

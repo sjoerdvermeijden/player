@@ -259,9 +259,6 @@
 			}
 
 		}
-
-		// Repeat Button
-		var repeatButton = document.querySelector('.js-repeat');
 		
 		// Pause button
 		var pauseButton = document.querySelector('.js-pause');
@@ -304,10 +301,19 @@
 			player.previousVideo();
 		})
 		
-		// Previous Video
+		// Repeat Button
+		var repeatButton = document.querySelector('.js-repeat');
+
 		repeatButton.addEventListener('click', function(e) {
 			e.preventDefault();
-			player.setLoop();
+
+			const body = document.body;
+			
+			if (!body.classList.contains('is-repeat')) {
+				body.classList.add('is-repeat');
+			} else {
+				body.classList.remove('is-repeat');
+			}
 		})
 
 		// Navigation Button
@@ -378,6 +384,12 @@
 		
 		volume.addEventListener('mouseup', function (e) {
 			const volumeValue = e.target.value;
+
+			if (volumeValue === '0') {
+				document.body.classList.add('is-muted');
+			} else {
+				document.body.classList.remove('is-muted');
+			}
 
 			player.setVolume(volumeValue);
 		});
