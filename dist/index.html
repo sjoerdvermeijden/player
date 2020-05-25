@@ -258,6 +258,12 @@ function onPlayerStateChange(event) {
   } else {
     document.body.classList.add('is-playing');
   }
+
+  if (document.body.classList.contains('is-repeat')) {
+    if (player.getPlayerState() === 0) {
+      player.previousVideo();
+    }
+  }
 } // Pause button
 
 
