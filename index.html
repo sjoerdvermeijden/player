@@ -371,8 +371,11 @@
 
 			link.addEventListener('click', function(e) {
 				e.preventDefault();
-
-				document.body.classList.remove('is-visible');
+				const body = document.body;
+				
+				body.classList.remove('is-visible');
+				body.classList.remove('is-repeat');
+				body.classList.remove('is-shuffled');
 
 				const playlistLink = link.getAttribute('href');
 				playlistId = playlistLink;
