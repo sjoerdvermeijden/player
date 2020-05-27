@@ -214,7 +214,7 @@
 			player = new YT.Player('player', {
 				height: '427',
 				width: '700',
-				playerVars: { 'controls': 0, 'autoplay': 1, 'listType': 'playlist', 'list': playlistId },
+				playerVars: { 'controls': 0, 'autoplay': 1, loop: 1, 'listType': 'playlist', 'list': playlistId },
 				events: {
 				'onReady': onPlayerReady,
 				'onStateChange': onPlayerStateChange
@@ -225,7 +225,6 @@
 		// 4. The API will call this function when the video player is ready.
 		function onPlayerReady(event) {
 			event.target.playVideo();
-			event.target.setLoop(true);
 
 			// Add playing class
 			document.body.classList.add('is-playing');
@@ -304,6 +303,11 @@
 
 		nextButton.addEventListener('click', function(e) {
 			e.preventDefault();
+
+			if (document.body.classList.contains('is-repeat')) {
+				document.body.classList.remove('is-repeat');
+			}
+
 			player.nextVideo();
 		})
 		
@@ -312,6 +316,10 @@
 
 		previousButton.addEventListener('click', function(e) {
 			e.preventDefault();
+			if (document.body.classList.contains('is-repeat')) {
+				document.body.classList.remove('is-repeat');
+			}
+			
 			player.previousVideo();
 		})
 		
@@ -403,6 +411,7 @@
 				player.unMute();
 			} else{
 				body.classList.add('is-muted');
+				body.classList.remove('is-dimmed');
 				player.mute();
 			}
 		})

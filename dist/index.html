@@ -214,6 +214,7 @@ function onYouTubeIframeAPIReady() {
     playerVars: {
       'controls': 0,
       'autoplay': 1,
+      loop: 1,
       'listType': 'playlist',
       'list': playlistId
     },
@@ -226,8 +227,7 @@ function onYouTubeIframeAPIReady() {
 
 
 function onPlayerReady(event) {
-  event.target.playVideo();
-  event.target.setLoop(true); // Add playing class
+  event.target.playVideo(); // Add playing class
 
   document.body.classList.add('is-playing');
   var playerState = player.getPlayerState();
@@ -289,12 +289,22 @@ playButton.addEventListener('click', function (e) {
 var nextButton = document.querySelector('.js-next');
 nextButton.addEventListener('click', function (e) {
   e.preventDefault();
+
+  if (document.body.classList.contains('is-repeat')) {
+    document.body.classList.remove('is-repeat');
+  }
+
   player.nextVideo();
 }); // Previous Video
 
 var previousButton = document.querySelector('.js-previous');
 previousButton.addEventListener('click', function (e) {
   e.preventDefault();
+
+  if (document.body.classList.contains('is-repeat')) {
+    document.body.classList.remove('is-repeat');
+  }
+
   player.previousVideo();
 }); // Repeat Button
 
@@ -372,6 +382,7 @@ muteButton.addEventListener('click', function (e) {
     player.unMute();
   } else {
     body.classList.add('is-muted');
+    body.classList.remove('is-dimmed');
     player.mute();
   }
 }); // Key presses
