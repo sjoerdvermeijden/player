@@ -35,7 +35,7 @@ html {
 .logo:before {
   content: "";
   display: block;
-  padding-bottom: 20%;
+  padding-bottom: 22%;
 }
 .logo svg {
   position: absolute;
