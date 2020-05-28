@@ -55,9 +55,15 @@
         background: #42454B;
         border-radius: 50%;
         z-index: 1;
+        color: color(grey, light);
 
         &:not(:last-child) {
             margin-bottom: 15px;    
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
         }
 
     }

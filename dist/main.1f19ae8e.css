@@ -411,9 +411,14 @@ input[type=range]:focus::-ms-fill-upper {
   background: #42454B;
   border-radius: 50%;
   z-index: 1;
+  color: #afada8;
 }
 .content__option:not(:last-child) {
   margin-bottom: 15px;
+}
+.content__option svg {
+  width: 20px;
+  height: 20px;
 }
 
 .main {
