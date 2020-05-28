@@ -397,8 +397,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .content__options {
   position: absolute;
-  top: 35px;
-  left: 35px;
+  top: 30px;
+  left: 30px;
 }
 .content__option {
   position: relative;
