@@ -115,17 +115,13 @@
 
     &__progress-bar {
         flex-grow: 1;
+    }
+
+    &__progress-bar,
+    &__current {
         
         &:not(:last-child) {
-            margin-right: 15px;    
-        }
-
-    }
-    
-    &__current {
-
-        &:not(:last-child) {
-            margin-right: 15px;
+            margin-right: 20px;
         }
 
     }
