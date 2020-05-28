@@ -1,7 +1,8 @@
 .header {
-    background: #42454B;
+    background: #2c2d33;
     padding: 10px 35px;
     display: flex;
+    border-bottom: 1px solid black;
 }
 
 .logo {
@@ -27,5 +28,5 @@
 }
 
 .video-title {
-    color: white;
+    color: color(grey, light);
 }

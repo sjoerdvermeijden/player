@@ -16,11 +16,20 @@
 				
 				<div class="content__player">
 
-					<a href="#" class="content__navigation js-navigation">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
+					<div class="content__options">
+
+						<a href="#" class="content__option content__option--navigation js-navigation">
+							<span class="content__icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384"><path d="M306 90c37.556 0 68.001 30.445 68.001 68S343.556 226 306 226s-68-30.445-68-68 30.444-68 68-68zm0 238c37.556 0 68.001 30.445 68.001 68S343.556 464.001 306 464.001 238 433.556 238 396s30.444-68 68-68zm0 237.999c37.556 0 68.001 30.444 68.001 68.001 0 37.555-30.445 68-68.001 68s-68-30.445-68-68c0-37.557 30.444-68.001 68-68.001z"/></svg>
+							</span>
+						</a>
+	
+						<a href="" class="content__option content__option--playlist">
+							
+						</a>
+
+					</div>
+
 	
 					<div class="content__overlay">
 
@@ -504,6 +513,24 @@
 				const newTime = player.getCurrentTime() + 1;
 
 				player.seekTo(newTime);
+			}
+
+			// Volume buttons
+
+			if (event.keyCode === 38) {
+				const newVolume = player.getVolume() + 5;
+
+				console.log(newVolume);
+
+				player.setVolume(newVolume);
+			}
+			
+			if (event.keyCode === 40) {
+				const newVolume = player.getVolume() - 5;
+
+				console.log(newVolume);
+
+				player.setVolume(newVolume);
 			}
 
 			// Next video
