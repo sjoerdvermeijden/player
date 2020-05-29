@@ -66,6 +66,14 @@
 
         }
 
+        .is-dimmed.is-muted & {
+
+            &--dimmed {
+                display: none;    
+            }
+
+        }
+
         &--volume {
             display: block;
         }

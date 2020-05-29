@@ -356,6 +356,9 @@ input[type=range]:focus::-ms-fill-upper {
 .is-dimmed .volume__icon--dimmed {
   display: block;
 }
+.is-dimmed.is-muted .volume__icon--dimmed {
+  display: none;
+}
 .volume__icon--volume {
   display: block;
 }
