@@ -2,6 +2,43 @@
 <html>
   <body>
 
+	<div class="overlay"></div>
+
+	<div class="login-container">
+
+		<div class="login-container__content">
+
+			<span class="login-container__title">Upreel</span>
+			
+		</div>
+
+		<ul class="login-container__items">
+
+			<li class="login-container__item login-container__item--facebook">
+				<span class="login-container__login-utility">
+					<span class="login-container__icon"></span>
+					<span class="login-container__label">Facebook</span>
+				</span>
+			</li>
+			
+			<li class="login-container__item login-container__item--google">
+				<span class="login-container__login-utility">
+					<span class="login-container__icon"></span>
+					<span class="login-container__label">Google</span>
+				</span>
+			</li>
+			
+			<li class="login-container__item">
+				<span class="login-container__login-utility">
+					<span class="login-container__icon"></span>
+					<span class="login-container__label">Facebook</span>
+				</span>
+			</li>
+
+		</ul>
+
+	</div>
+
     <div class="site">
 
 		<header class="header">
@@ -551,6 +588,15 @@
 			if (event.keyCode == 91 && event.keyCode == 39) {}
 			
 		};
+
+		// Login
+		const loginButton = document.querySelector('.js-login');
+		loginButton.addEventListener('click', (e) => {
+			e.preventDefault();
+			const body = document.body;
+
+			body.classList.toggle('is-login');
+		})
 	  
     </script>
 

@@ -1,0 +1,49 @@
+.login-container {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background: color(grey, dark);
+    color: white;
+    z-index: 1;
+
+    &__content {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    &__label {
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    &__items {
+        display: flex;
+        list-style-type: none;
+    }
+
+    &__item {
+        padding: 15px;
+        flex-grow: 1;
+
+        &--facebook {
+            background-color: color(facebook);
+        }
+        
+        &--google {
+            background-color: color(google);
+        }
+
+    }
+
+    .is-login & {
+        display: block;
+    }
+
+}

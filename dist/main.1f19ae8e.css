@@ -11,6 +11,10 @@ html {
   font-size: 14px;
 }
 
+body {
+  position: relative;
+}
+
 .site {
   display: flex;
   flex-direction: column;
@@ -19,6 +23,20 @@ html {
 
 .main {
   flex-grow: 1;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.is-login .overlay {
+  display: block;
 }
 
 .header {
@@ -360,6 +378,46 @@ input[type=range]:focus::-ms-fill-upper {
   display: none;
 }
 .volume__icon--volume {
+  display: block;
+}
+
+.login-container {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: #43454b;
+  color: white;
+  z-index: 1;
+}
+.login-container__content {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+.login-container__title {
+  text-transform: uppercase;
+}
+.login-container__label {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.login-container__items {
+  display: flex;
+  list-style-type: none;
+}
+.login-container__item {
+  padding: 15px;
+  flex-grow: 1;
+}
+.login-container__item--facebook {
+  background-color: #1877f2;
+}
+.login-container__item--google {
+  background-color: #ea4335;
+}
+.is-login .login-container {
   display: block;
 }
 
