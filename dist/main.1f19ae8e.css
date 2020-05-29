@@ -344,19 +344,19 @@ input[type=range]:focus::-ms-fill-upper {
 .is-muted .volume__icon {
   display: block;
 }
-.is-muted .volume__icon--unmuted {
+.is-muted .volume__icon--volume {
   display: none;
 }
 .is-muted .volume__icon--dimmed {
   display: none;
 }
-.is-dimmed .volume__icon--unmuted {
+.is-dimmed .volume__icon--volume {
   display: none;
 }
 .is-dimmed .volume__icon--dimmed {
   display: block;
 }
-.volume__icon--unmuted {
+.volume__icon--volume {
   display: block;
 }
 
