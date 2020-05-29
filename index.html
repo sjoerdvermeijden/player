@@ -496,21 +496,14 @@
 			// Mute button
 			if (event.keyCode === 77) {
 				const dimmedVolume = document.querySelector('.js-dimmed');
+				const body = document.body;
 
 				if(!player.isMuted()){
 					body.classList.add('is-muted');
-
-					if (document.body.classList.contains('is-dimmed')) {
-						
-					} else {
-						dimmedVolume.style.display = 'none';
-					}
 	
 					player.mute();
 				} else {
 					body.classList.remove('is-muted');
-					body.classList.remove('is-dimmed');
-					dimmedVolume.style.display = 'block';
 	
 					player.unMute();
 				}

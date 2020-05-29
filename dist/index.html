@@ -456,19 +456,15 @@ document.onkeydown = function (event) {
 
   if (event.keyCode === 77) {
     var dimmedVolume = document.querySelector('.js-dimmed');
+    var _body = document.body;
 
     if (!player.isMuted()) {
-      body.classList.add('is-muted');
-
-      if (document.body.classList.contains('is-dimmed')) {} else {
-        dimmedVolume.style.display = 'none';
-      }
+      _body.classList.add('is-muted');
 
       player.mute();
     } else {
-      body.classList.remove('is-muted');
-      body.classList.remove('is-dimmed');
-      dimmedVolume.style.display = 'block';
+      _body.classList.remove('is-muted');
+
       player.unMute();
     }
   } // Progress Forward
