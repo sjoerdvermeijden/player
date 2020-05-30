@@ -2,17 +2,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const body = document.body;
     const loginContainer = document.querySelector('.js-login');
 
-    if (body.classList.contains('is-login')) {
-        
-    }
+    // body.addEventListener('click', (e) => {
 
-    body.addEventListener('click', (e) => {
+    //     if (body.classList.contains('is-login')) {
 
-        if (body.classList.contains('is-login')) {
             
-            if (!loginContainer.contains(e.target)) {
-                body.classList.remove('is-login');
-            }
-        }
-    })
+            
+    //         if (!loginContainer.contains(e.target)) {
+    //             body.classList.remove('is-login');
+    //         }
+    //     }
+    // })
 })

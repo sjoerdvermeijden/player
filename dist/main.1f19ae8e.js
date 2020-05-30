@@ -192,17 +192,13 @@ module.hot.accept(reloadCSS);
 },{"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/src/js/custom/login.js":[function(require,module,exports) {
 window.addEventListener('DOMContentLoaded', function (e) {
   var body = document.body;
-  var loginContainer = document.querySelector('.js-login');
-
-  if (body.classList.contains('is-login')) {}
-
-  body.addEventListener('click', function (e) {
-    if (body.classList.contains('is-login')) {
-      if (!loginContainer.contains(e.target)) {
-        body.classList.remove('is-login');
-      }
-    }
-  });
+  var loginContainer = document.querySelector('.js-login'); // body.addEventListener('click', (e) => {
+  //     if (body.classList.contains('is-login')) {
+  //         if (!loginContainer.contains(e.target)) {
+  //             body.classList.remove('is-login');
+  //         }
+  //     }
+  // })
 });
 },{}],"main.js":[function(require,module,exports) {
 "use strict";

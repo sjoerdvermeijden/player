@@ -261,6 +261,10 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   event.target.playVideo();
+  var playerVolume = event.target.getVolume();
+  var volumeSlider = document.querySelector('.js-volume-range');
+  console.log(playerVolume);
+  volumeSlider.value = playerVolume;
 
   if (localStorage.getItem('playListId') !== null) {
     var playList = localStorage.getItem('playListId');
