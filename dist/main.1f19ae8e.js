@@ -189,11 +189,28 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/src/js/custom/login.js":[function(require,module,exports) {
+window.addEventListener('DOMContentLoaded', function (e) {
+  var body = document.body;
+  var loginContainer = document.querySelector('.js-login');
+
+  if (body.classList.contains('is-login')) {}
+
+  body.addEventListener('click', function (e) {
+    if (body.classList.contains('is-login')) {
+      if (!loginContainer.contains(e.target)) {
+        body.classList.remove('is-login');
+      }
+    }
+  });
+});
+},{}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./assets/src/scss/style.scss");
-},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./assets/src/js/custom/login");
+},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/login":"assets/src/js/custom/login.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -221,7 +238,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52357" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53426" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
