@@ -259,13 +259,18 @@
 		function onPlayerReady(event) {
 			event.target.playVideo();
 			
+			// Set player Volume with localStorage if exists
 			const playerVolume = event.target.getVolume();
 			const volumeSlider = document.querySelector('.js-volume-range');
 
-			console.log(playerVolume);
+			if (localStorage.getItem('volume')) {
+				const volumeValue = localStorage.getItem('volume');
+				volumeSlider.value = volumeValue;
+			} else {
+				volumeSlider.value = playerVolume;
+			}
 
-			volumeSlider.value = playerVolume;
-
+			// Adds the latest played playlist to localStorage
 			if (localStorage.getItem('playListId') !== null) {
 				const playList = localStorage.getItem('playListId');
 				
@@ -465,16 +470,19 @@
 			}
 		})
 
-		// Volume icons
+		// Volume
 		const volume = document.querySelector('.js-volume-range');
 		
 		volume.addEventListener('mouseup', function (e) {
 			const volumeValue = e.target.value;
 
+			// LocalStorage
+			localStorage.setItem('volume', volumeValue);
+
+			// Volume icons
 			if (volumeValue === '0') {
 				document.body.classList.add('is-muted');
 				document.body.classList.remove('is-dimmed');
-				console.log(`mute ${volumeValue}`);
 			} else if (volumeValue > '0' && volumeValue < '50') {
 				document.body.classList.add('is-dimmed');
 				document.body.classList.remove('is-muted');

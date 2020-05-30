@@ -260,11 +260,18 @@ function onYouTubeIframeAPIReady() {
 
 
 function onPlayerReady(event) {
-  event.target.playVideo();
+  event.target.playVideo(); // Set player Volume with localStorage if exists
+
   var playerVolume = event.target.getVolume();
   var volumeSlider = document.querySelector('.js-volume-range');
-  console.log(playerVolume);
-  volumeSlider.value = playerVolume;
+
+  if (localStorage.getItem('volume')) {
+    var volumeValue = localStorage.getItem('volume');
+    volumeSlider.value = volumeValue;
+  } else {
+    volumeSlider.value = playerVolume;
+  } // Adds the latest played playlist to localStorage
+
 
   if (localStorage.getItem('playListId') !== null) {
     var playList = localStorage.getItem('playListId');
@@ -430,16 +437,17 @@ muteButton.addEventListener('click', function (e) {
     body.classList.remove('is-dimmed');
     player.mute();
   }
-}); // Volume icons
+}); // Volume
 
 var volume = document.querySelector('.js-volume-range');
 volume.addEventListener('mouseup', function (e) {
-  var volumeValue = e.target.value;
+  var volumeValue = e.target.value; // LocalStorage
+
+  localStorage.setItem('volume', volumeValue); // Volume icons
 
   if (volumeValue === '0') {
     document.body.classList.add('is-muted');
     document.body.classList.remove('is-dimmed');
-    console.log("mute ".concat(volumeValue));
   } else if (volumeValue > '0' && volumeValue < '50') {
     document.body.classList.add('is-dimmed');
     document.body.classList.remove('is-muted');
