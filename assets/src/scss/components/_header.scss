@@ -1,11 +1,14 @@
 .header {
     background: #2c2d33;
     display: flex;
-    border-bottom: 1px solid black;
-}
+    align-items: center;
+    border-bottom: 3px solid black;
 
-.logo {
-    margin-right: auto;
+    &__main {
+        flex-grow: 1;
+        padding: 0 15px;    
+    }
+
 }
 
 .video-title {
