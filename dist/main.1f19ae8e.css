@@ -169,6 +169,34 @@ body {
   margin-right: auto;
 }
 
+.utilities {
+  display: flex;
+}
+
+.theme-color {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  color: #f4f4f4;
+  height: 100%;
+}
+.theme-color svg {
+  width: 20px;
+  height: 20px;
+}
+.theme-color__light {
+  display: none;
+}
+.light-theme .theme-color__light {
+  display: block;
+}
+.light-theme .theme-color__dark {
+  display: none;
+}
+
 .login-button {
   display: flex;
   align-items: center;

@@ -207,6 +207,14 @@ window.addEventListener('DOMContentLoaded', function () {
     body.classList.toggle('sidebar-open');
   });
 });
+},{}],"assets/src/js/custom/color-theme.js":[function(require,module,exports) {
+window.addEventListener('DOMContentLoaded', function () {
+  var themeButton = document.querySelector('.js-theme');
+  themeButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.body.classList.toggle('light-theme');
+  });
+});
 },{}],"main.js":[function(require,module,exports) {
 "use strict";
 
@@ -215,7 +223,9 @@ require("./assets/src/scss/style.scss");
 require("./assets/src/js/custom/login");
 
 require("./assets/src/js/custom/sidebar-toggle");
-},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/login":"assets/src/js/custom/login.js","./assets/src/js/custom/sidebar-toggle":"assets/src/js/custom/sidebar-toggle.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./assets/src/js/custom/color-theme");
+},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/login":"assets/src/js/custom/login.js","./assets/src/js/custom/sidebar-toggle":"assets/src/js/custom/sidebar-toggle.js","./assets/src/js/custom/color-theme":"assets/src/js/custom/color-theme.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
