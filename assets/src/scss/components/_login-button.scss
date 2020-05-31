@@ -1,10 +1,26 @@
 .login-button {
-    padding: 20px 25px;
-    background: black;
+    display: flex;
+    padding: 25px 30px;
+    background: color(grey, dark);
+    color: white;
+    text-decoration: none;
 
     &__label {
-        color: white;
         text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-right: 10px;    
+        }
+
+    }
+
+    &__icon {
+        
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+        
     }
 
 }
