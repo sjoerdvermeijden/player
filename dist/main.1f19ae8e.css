@@ -298,12 +298,17 @@ input[type=range]:focus::-ms-fill-upper {
   max-width: 940px;
   margin: 0 auto;
   display: flex;
+  align-items: flex-start;
 }
 .navigation__close {
-  width: 40px;
-  height: 40px;
-  background: green;
   border: 0;
+  color: #f4f4f4;
+  background: none;
+  margin-top: 5px;
+}
+.navigation__close svg {
+  width: 20px;
+  height: 20px;
 }
 .navigation__close:hover, .navigation__close:focus {
   cursor: pointer;

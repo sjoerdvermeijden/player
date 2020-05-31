@@ -2,14 +2,20 @@
     max-width: 940px;
     margin: 0 auto;
     display: flex;
+    align-items: flex-start;
 
     $gutter: 20px;
 
     &__close {
-        width: 40px;
-        height: 40px;
-        background: green;
         border: 0;
+        color: color(grey, lighter);
+        background: none;
+        margin-top: 5px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
 
         &:hover,
         &:focus {
