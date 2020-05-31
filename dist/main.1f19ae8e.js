@@ -199,13 +199,23 @@ module.hot.accept(reloadCSS);
 //         }
 //     })
 // })
+},{}],"assets/src/js/custom/sidebar-toggle.js":[function(require,module,exports) {
+window.addEventListener('DOMContentLoaded', function () {
+  var sidebarToggleButton = document.querySelector('.js-sidebar-toggle');
+  var body = document.body;
+  sidebarToggleButton.addEventListener('click', function (e) {
+    body.classList.toggle('sidebar-open');
+  });
+});
 },{}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./assets/src/scss/style.scss");
 
 require("./assets/src/js/custom/login");
-},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/login":"assets/src/js/custom/login.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./assets/src/js/custom/sidebar-toggle");
+},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/login":"assets/src/js/custom/login.js","./assets/src/js/custom/sidebar-toggle":"assets/src/js/custom/sidebar-toggle.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
