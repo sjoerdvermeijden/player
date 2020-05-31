@@ -168,7 +168,7 @@ body {
   display: flex;
   padding: 25px 30px;
   background: #43454b;
-  color: white;
+  color: #f4f4f4;
   text-decoration: none;
 }
 .login-button__label {
@@ -297,6 +297,19 @@ input[type=range]:focus::-ms-fill-upper {
 .navigation {
   max-width: 940px;
   margin: 0 auto;
+  display: flex;
+}
+.navigation__close {
+  width: 40px;
+  height: 40px;
+  background: green;
+  border: 0;
+}
+.navigation__close:hover, .navigation__close:focus {
+  cursor: pointer;
+}
+.navigation__close:not(:last-child) {
+  margin-right: 30px;
 }
 .navigation__items {
   margin: -20px;

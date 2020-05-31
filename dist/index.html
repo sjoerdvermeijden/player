@@ -42,6 +42,8 @@
 
 		<div class="navigation">
 
+			<button class="navigation__close js-close"></button>
+
 			<ul class="navigation__items">
 		
 				<li class="navigation__item">
@@ -390,9 +392,13 @@ repeatButton.addEventListener('click', function (e) {
 }); // Navigation Button
 
 var navigationButton = document.querySelector('.js-navigation');
+var closeButton = document.querySelector('.js-close');
 navigationButton.addEventListener('click', function (e) {
   e.preventDefault();
   document.body.classList.toggle('is-visible');
+});
+closeButton.addEventListener('click', function () {
+  document.body.classList.remove('is-visible');
 }); // Shuffle button
 
 var shuffleButton = document.querySelector('.js-shuffle');
