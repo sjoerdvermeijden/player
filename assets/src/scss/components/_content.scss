@@ -10,14 +10,7 @@
     &__sidebar {
         width: 200px;
         height: 100%;
-        background: color(grey, darkest);
-        transform: translateX(-200px);
-        transition: transform .2s ease;
-
-        .sidebar-open & {
-            transform: translateX(0);
-        }
-        
+        background: color(grey, darkest);        
     }
 
     &__container {
@@ -27,6 +20,13 @@
         margin-bottom: auto;
         width: 100%;
         height: 100%;
+        transition: transform .2s ease;
+        transform: translateX(-200px);
+
+        .sidebar-open & {
+            transform: translateX(0);
+        }
+
     }
 
     &__main {
@@ -43,7 +43,13 @@
         display: flex;
         flex-direction:column;
         align-items: center;
-        margin-left: -200px;
+        transition: transform .2s ease;
+        transform: translateX(100px);
+        
+        .sidebar-open & {
+            transform: translateX(-100px);
+        }
+
     }
 
     &__controls {
