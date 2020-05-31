@@ -335,7 +335,7 @@ input[type=range]:focus::-ms-fill-upper {
   text-transform: uppercase;
 }
 .navigation__link:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 .navigation__link--main {
   font-size: 18px;
