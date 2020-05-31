@@ -224,7 +224,6 @@ body {
 .sidebar-toggle span:not(:last-child) {
   margin-bottom: 8px;
 }
-
 input[type=range] {
   height: 21px;
   -webkit-appearance: none;

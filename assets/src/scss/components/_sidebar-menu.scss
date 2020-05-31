@@ -43,6 +43,16 @@
             margin-bottom: 8px;    
         }
 
+        .sidebar-open & {
+
+            &:nth-child(1) {}
+
+            &:nth-child(2) {}
+            
+            &:nth-child(3) {}
+
+        }
+
     }
 
 }
