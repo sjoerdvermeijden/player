@@ -1,8 +1,7 @@
 .header {
-    background: #2c2d33;
+    background: color(grey, darkest);
     display: flex;
     align-items: center;
-    border-bottom: 3px solid black;
 
     &__main {
         flex-grow: 1;

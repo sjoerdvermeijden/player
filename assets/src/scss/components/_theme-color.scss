@@ -14,18 +14,18 @@
     }
 
     &__light {
-        display: none;
         
         .light-theme & {
-            display: block;
+            display: none;
         }
         
     }
     
     &__dark {
+        display: none;
 
         .light-theme & {
-            display: none;
+            display: block;
         }
 
     }

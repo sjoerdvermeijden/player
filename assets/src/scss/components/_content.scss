@@ -7,6 +7,10 @@
     justify-content: center;
     background: color(grey, darker);
 
+    .light-theme & {
+        background: color(grey, lighter);
+    }
+
     &__sidebar {
         width: 200px;
         height: 100%;
