@@ -189,52 +189,23 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/src/js/custom/facebook-login.js":[function(require,module,exports) {
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '{your-app-id}',
-    cookie: true,
-    xfbml: true,
-    version: '{api-version}'
-  });
-  FB.AppEvents.logPageView();
-  FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
-  });
-};
-
-(function (d, s, id) {
-  var js,
-      fjs = d.getElementsByTagName(s)[0];
-
-  if (d.getElementById(id)) {
-    return;
-  }
-
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
-},{}],"assets/src/js/custom/login.js":[function(require,module,exports) {
-window.addEventListener('DOMContentLoaded', function (e) {
-  var body = document.body;
-  var loginContainer = document.querySelector('.js-login');
-  body.addEventListener('click', function (e) {
-    if (!loginContainer.contains(e.target)) {
-      body.classList.remove('is-login');
-    }
-  });
-});
+},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/src/js/custom/login.js":[function(require,module,exports) {
+// window.addEventListener('DOMContentLoaded', (e) => {
+//     const body = document.body;
+//     const loginContainer = document.querySelector('.js-login');
+//     body.addEventListener('click', (e) => {    
+//         if (!loginContainer.contains(e.target)) {
+//             body.classList.remove('is-login');
+//         }
+//     })
+// })
 },{}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./assets/src/scss/style.scss");
 
-require("./assets/src/js/custom/facebook-login");
-
 require("./assets/src/js/custom/login");
-},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/facebook-login":"assets/src/js/custom/facebook-login.js","./assets/src/js/custom/login":"assets/src/js/custom/login.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./assets/src/scss/style.scss":"assets/src/scss/style.scss","./assets/src/js/custom/login":"assets/src/js/custom/login.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
