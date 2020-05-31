@@ -307,14 +307,14 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: 5px;
 }
 .navigation__close svg {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 .navigation__close:hover, .navigation__close:focus {
   cursor: pointer;
 }
 .navigation__close:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 .navigation__items {
   margin: -20px;
