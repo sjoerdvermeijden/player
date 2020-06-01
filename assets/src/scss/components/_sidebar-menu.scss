@@ -2,7 +2,9 @@
     list-style-type: none;
 
     &__link {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
         width: 100%;
         padding: 15px;
         text-decoration: none;
@@ -11,6 +13,34 @@
         &:hover,
         &:focus {
             background: color(grey, dark);
+        }
+
+        .sidebar-open & {
+            justify-content: flex-start;
+        }
+
+    }
+
+    &__icon {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+        
+        svg {
+            width: 20px;
+            height: 20px;
+            color: green;
+        }
+
+    }
+
+    &__label {
+        display: none;
+
+        .sidebar-open & {
+            display: block;
         }
 
     }

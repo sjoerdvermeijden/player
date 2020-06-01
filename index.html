@@ -174,19 +174,25 @@
 						<ul class="sidebar-menu">
 							<li class="sidebar-menu__item">
 								<a href="#" class="sidebar-menu__link">
-									<span class="sidebar-menu__icon"></span>
+									<span class="sidebar-menu__icon">
+										<svg viewBox="0 -28 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.383 44.578C444.879 15.832 408.512 0 368.973 0c-29.555 0-56.621 9.344-80.45 27.77C276.5 37.07 265.605 48.45 256 61.73c-9.602-13.277-20.5-24.66-32.527-33.96C199.648 9.344 172.582 0 143.027 0c-39.539 0-75.91 15.832-102.414 44.578C14.426 72.988 0 111.801 0 153.871c0 43.3 16.137 82.938 50.781 124.742 30.992 37.395 75.535 75.356 127.117 119.313 17.614 15.012 37.579 32.027 58.309 50.152A30.023 30.023 0 0 0 256 455.516c7.285 0 14.316-2.641 19.785-7.43 20.73-18.129 40.707-35.152 58.328-50.172 51.575-43.95 96.117-81.906 127.11-119.305C495.867 236.81 512 197.172 512 153.867c0-42.066-14.426-80.879-40.617-109.289zm0 0" fill="currentColor"/></svg>
+									</span>
 									<span class="sidebar-menu__label">Test</span>
 								</a>
 							</li>
 							<li class="sidebar-menu__item">
 								<a href="#" class="sidebar-menu__link">
-									<span class="sidebar-menu__icon"></span>
+									<span class="sidebar-menu__icon">
+										<svg viewBox="0 -28 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.383 44.578C444.879 15.832 408.512 0 368.973 0c-29.555 0-56.621 9.344-80.45 27.77C276.5 37.07 265.605 48.45 256 61.73c-9.602-13.277-20.5-24.66-32.527-33.96C199.648 9.344 172.582 0 143.027 0c-39.539 0-75.91 15.832-102.414 44.578C14.426 72.988 0 111.801 0 153.871c0 43.3 16.137 82.938 50.781 124.742 30.992 37.395 75.535 75.356 127.117 119.313 17.614 15.012 37.579 32.027 58.309 50.152A30.023 30.023 0 0 0 256 455.516c7.285 0 14.316-2.641 19.785-7.43 20.73-18.129 40.707-35.152 58.328-50.172 51.575-43.95 96.117-81.906 127.11-119.305C495.867 236.81 512 197.172 512 153.867c0-42.066-14.426-80.879-40.617-109.289zm0 0" fill="currentColor"/></svg>
+									</span>
 									<span class="sidebar-menu__label">Test</span>
 								</a>
 							</li>
 							<li class="sidebar-menu__item">
 								<a href="#" class="sidebar-menu__link">
-									<span class="sidebar-menu__icon"></span>
+									<span class="sidebar-menu__icon">
+										<svg viewBox="0 -28 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.383 44.578C444.879 15.832 408.512 0 368.973 0c-29.555 0-56.621 9.344-80.45 27.77C276.5 37.07 265.605 48.45 256 61.73c-9.602-13.277-20.5-24.66-32.527-33.96C199.648 9.344 172.582 0 143.027 0c-39.539 0-75.91 15.832-102.414 44.578C14.426 72.988 0 111.801 0 153.871c0 43.3 16.137 82.938 50.781 124.742 30.992 37.395 75.535 75.356 127.117 119.313 17.614 15.012 37.579 32.027 58.309 50.152A30.023 30.023 0 0 0 256 455.516c7.285 0 14.316-2.641 19.785-7.43 20.73-18.129 40.707-35.152 58.328-50.172 51.575-43.95 96.117-81.906 127.11-119.305C495.867 236.81 512 197.172 512 153.867c0-42.066-14.426-80.879-40.617-109.289zm0 0" fill="currentColor"/></svg>
+									</span>
 									<span class="sidebar-menu__label">Test</span>
 								</a>
 							</li>
@@ -323,10 +329,16 @@
 			player = new YT.Player('player', {
 				height: '427',
 				width: '700',
-				playerVars: { 'controls': 0, 'autoplay': 1, loop: 1, 'listType': 'playlist', 'list': playlistId },
+				playerVars: { 
+					'controls': 0, 
+					'autoplay': 1,
+					'listType': 'playlist', 
+					'list': playlistId 
+				},
 				events: {
 				'onReady': onPlayerReady,
-				'onStateChange': onPlayerStateChange
+				'onStateChange': onPlayerStateChange,
+				'onError': onPlayerError
 				}
 			});
 		}
@@ -334,6 +346,7 @@
 		// 4. The API will call this function when the video player is ready.
 		function onPlayerReady(event) {
 			event.target.playVideo();
+			event.target.setLoop();
 			
 			// Set player Volume with localStorage if exists
 			const playerVolume = event.target.getVolume();
@@ -376,6 +389,7 @@
 		//    The function indicates that when playing a video (state=1),
 		//    the player should play for six seconds and then stop.
 		var done = false;
+
 		function onPlayerStateChange(event) {
 			var videoData = player.getVideoData();
 			var title = videoData['title'];
@@ -411,6 +425,11 @@
 
 			}
 
+		}
+
+		function onPlayerError(event) {
+			console.log('Error: ' + event.data);
+			player.nextVideo();
 		}
 		
 		// Pause button
