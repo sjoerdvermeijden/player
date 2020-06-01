@@ -7,3 +7,22 @@
 @function color($color, $value: 'default') {
     @return map-get(map-get($colors, $color), $value);
 }
+
+// Media Queries
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
