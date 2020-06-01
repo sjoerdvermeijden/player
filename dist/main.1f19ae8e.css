@@ -244,6 +244,7 @@ body {
 }
 .sidebar-menu__icon {
   display: flex;
+  color: #afada8;
 }
 .sidebar-menu__icon:not(:last-child) {
   margin-right: 15px;
@@ -251,7 +252,6 @@ body {
 .sidebar-menu__icon svg {
   width: 20px;
   height: 20px;
-  color: green;
 }
 .sidebar-menu__label {
   display: none;
@@ -604,7 +604,7 @@ input[type=range]:focus::-ms-fill-upper {
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  padding: 50px 0;
+  padding: 70px 0;
   height: 100%;
 }
 .content__player {

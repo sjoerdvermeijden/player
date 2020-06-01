@@ -23,6 +23,7 @@
 
     &__icon {
         display: flex;
+        color: color(grey, light);
 
         &:not(:last-child) {
             margin-right: 15px;
@@ -31,7 +32,6 @@
         svg {
             width: 20px;
             height: 20px;
-            color: green;
         }
 
     }
